@@ -91,7 +91,7 @@
 
     echo "<div class='navbar'>
     <img src='./assets/favicon.png' alt=''>
-    <h1>Welkom $usernameCookie</h1>
+    <h1>Welcome $usernameCookie</h1>
     <i class='fa-solid fa-house' onclick='home()'></i>     
     <i onclick='logout()' class='fa-solid fa-arrow-right-from-bracket'></i>
     </div>"
