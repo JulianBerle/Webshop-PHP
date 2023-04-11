@@ -12,12 +12,13 @@ This project is made by This site was built using [Julian Berle](https://www.jul
     * Add items to favorites.
 
 ### ToDo 
+* HALLO
 
-    * Send confirmation E-Mail when login in with another IP (Sames as Discord).
+    <!-- * Send confirmation E-Mail when login in with another IP (Sames as Discord).
     * Register ass user.
     * Working shoppingcart.
     * Working favorites list.
-    * User Panel
+    * User Panel -->
 
 ### Previews
 
