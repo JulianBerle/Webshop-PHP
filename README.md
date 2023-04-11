@@ -1,7 +1,7 @@
 # Webshop 
 ### This project is made by [Julian Berle](https://www.julianberle.nl).
 
-### Features
+#### Features
 
 * Main page with all the items, Login and ShoppingCart.
 * User panel.
@@ -10,7 +10,7 @@
 * Secure passwords (Passwords are hashed).
 * Add items to favorites.
 
-### ToDo 
+#### ToDo 
 
 * Send confirmation E-Mail when login in with another IP (Sames as Discord).
 * Register ass user.
@@ -18,7 +18,7 @@
 * Working favorites list.
 * User Panel
 
-### Previews
+#### Previews
 
 <p align="center">
   <img src="https://i.imgur.com/0JAMZeF.png" />
