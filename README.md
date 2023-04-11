@@ -21,8 +21,7 @@
 ### Previews
 
 <p align="center">
-  <img src="https://i.imgur.com/0JAMZeF.png" /> 
-  
+  <img src="https://i.imgur.com/0JAMZeF.png" />
   <img src="https://i.imgur.com/aGBoyfq.png" />
 </p>
 
