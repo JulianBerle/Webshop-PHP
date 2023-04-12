@@ -8,8 +8,8 @@
 * Admin panel where you can see all the items, add/ delete items, see all the users, add/ delete users.
 * MySQL Database.
 * Secure passwords (Passwords are hashed).
-<!-- * Add items to favorites. -->
 * Register as user.
+<!-- * Add items to favorites. -->
 
 ### ToDo 
 
