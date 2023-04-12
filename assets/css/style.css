@@ -242,6 +242,9 @@ button:hover {
 .form.login p {
     font-size: 15px;
     text-align: center;
+}.form.login a {
+    cursor: pointer;
+    color: #0000ff;
 }
 
 input[type=submit] {

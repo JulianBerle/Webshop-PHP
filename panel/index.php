@@ -151,7 +151,12 @@
             $query = $database_connection->query("SELECT * FROM users");
 
             while($row = $query->fetch()) {
-                echo "<div class='item'><span class='teksten'>" . $row['id'] . "<br> Naam: " . $row['username'] . "<br> Password: " . $row['password'] . " <br></span><a href='?delete-user=" . $row['id'] . "' class='buttonDelete' id='user-" . $row['id'] . "'>Delete</a><br></div> <br>\n";
+                if($row['is_admin'] == 1) {
+                    $isAdmin = "true";
+                } else {
+                    $isAdmin = "false";
+                }
+                echo "<div class='item'><span class='teksten'>" . $row['id'] . "<br> Naam: " . $row['firstname'] . " " . $row['lastname'] . "<br> Password: " . $row['password'] . "<br>E-Mail Adress: " . $row['email'] . "<br>Admin: " . $isAdmin . "<br></span><a href='?delete-user=" . $row['id'] . "' class='buttonDelete' id='user-" . $row['id'] . "'>Delete</a><br></div> <br>\n";
             };
         ?>
     </div> 
