@@ -1,7 +1,6 @@
 
-<script src='./js/script.js'></script>
+<script src='./assets/js/script.js'></script>
 <?php
-    // echo "<script src='./js/script.js'></script>";
     include_once("./include.php");
     if(isset($_POST['submit'])) {
         $username = $_POST['username'];
@@ -20,7 +19,7 @@
                 echo "<script>confirmAction('$username')</script>";
             } else {
                 setcookie("Login", $username, );
-                header("Location: ./panel.php");
+                header("Location: ./myaccount/");
             }
 
         } else {
@@ -39,7 +38,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://kit.fontawesome.com/e6d99cb95a.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
     <div class="navbar">
@@ -67,10 +66,9 @@
         $query = $database_connection->query("SELECT * FROM store ORDER BY id DESC");
 
         while($row = $query->fetch()) {
-            echo "<div class='box'> <button class='favorite' onclick='alert(`This function is in development. Stay tuned!`)'><i class='fa-solid fa-heart'></i></button> <img src='uploads/" .$row['img'] . "' alt='" . $row['name'] . "-img'> <h2>" . $row['name'] . "</h2> <p>€" . $row['price'] . "</p> <button class='add-to-cart' onclick='alert(`This function is in development. Stay tuned!`)'><i class='fa-solid fa-cart-shopping'></i></button></div> <br>\n";
+            echo "<div class='box'> <button class='favorite' onclick='alert(`This function is in development. Stay tuned!`)'><i class='fa-solid fa-heart'></i></button> <img src='./assets/images/product-images/" .$row['img'] . "' alt='" . $row['name'] . "-img'> <h2>" . $row['name'] . "</h2> <p>€" . $row['price'] . "</p> <button class='add-to-cart' onclick='alert(`This function is in development. Stay tuned!`)'><i class='fa-solid fa-cart-shopping'></i></button></div> <br>\n";
         };
         ?>
     </div>
-    <script src="./js/script.js"></script>
 </body>
 </html>
