@@ -3,8 +3,8 @@
 <?php
     include_once("./include.php");
     if(isset($_POST['submit'])) {
-        $email = $_POST['email'];
-        $password = $_POST["password"];
+        $email = $_POST['email_login'];
+        $password = $_POST["password_login"];
 
         $query = 'SELECT * FROM users WHERE (email = :email)';
         $values = [':email' => $email];
@@ -22,10 +22,10 @@
                 header("Location: ./myaccount/");
             }
 
+        } 
         } else {
             phpAlert("Username or password is incorrect");
           }
-        } 
     }
 
     if(isset($_POST['register_submit'])) {
@@ -82,10 +82,10 @@
         <i class="fa-solid fa-x" onclick="closeLogin(1)"></i>
         <h1>login</h1>
         <form action="" method="post">
-            <label for="email">E-Mail adress</label> <br>
-            <input type="email" name="email" id="email"> <br>
-            <label for="password">Password</label> <br>
-            <input type="password" name="password" id="password"><br> <br>
+            <label for="email_login">E-Mail adress</label> <br>
+            <input type="email" name="email_login" id="email_login" required=true> <br>
+            <label for="password_login">Password</label> <br>
+            <input type="password" name="password_login" id="password_login" required=true><br> <br>
             <input type="submit" name="submit" value="Inloggen"> <br>
             <p>Geen account? <a onclick="openRegister()">regsitreer</a></p> <br> 
         </form>
