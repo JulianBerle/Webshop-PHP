@@ -37,14 +37,18 @@ REPLACE INTO `store` (`id`, `name`, `price`, `img`) VALUES
 -- Structuur van  tabel random_meuk.users wordt geschreven
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(100) NOT NULL DEFAULT '0',
+  `firtsname` varchar(100) NOT NULL DEFAULT '0',
+  `lastname` varchar(100) NOT NULL DEFAULT '0',
+  `email` varchar(100) NOT NULL DEFAULT '0',
   `password` varchar(100) NOT NULL DEFAULT '0',
+  `is_admin` binary(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
 
--- Dumpen data van tabel random_meuk.users: ~1 rows (ongeveer)
-REPLACE INTO `users` (`id`, `username`, `password`) VALUES
-	(5, 'Julian', '$2y$10$huRhYJRW4TB/TemnGUh1tuXtHLLJzGJUoc1e9X6xQc3CetWEtAjlS');
+-- Dumpen data van tabel random_meuk.users: ~0 rows (ongeveer)
+REPLACE INTO `users` (`id`, `firtsname`, `lastname`, `email`, `password`, `is_admin`) VALUES
+	(5, 'Julian', 'Berle', 'berlejulian@gmail.com', '$2y$10$huRhYJRW4TB/TemnGUh1tuXtHLLJzGJUoc1e9X6xQc3CetWEtAjlS', _binary 0x31),
+	(10, 'Henkj', 'Jansenq', '12@12.nl', '$2y$10$ShxRo41mzrBBalgGMqSRae5eVMO.RYK9OhdP7fg0vunAiQlo2DgO.', _binary 0x30);
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
