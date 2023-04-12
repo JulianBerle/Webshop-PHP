@@ -3,11 +3,11 @@
 <?php
     include_once("./include.php");
     if(isset($_POST['submit'])) {
-        $username = $_POST['username'];
+        $email = $_POST['email'];
         $password = $_POST["password"];
 
-        $query = 'SELECT * FROM users WHERE (username = :username)';
-        $values = [':username' => $username];
+        $query = 'SELECT * FROM users WHERE (email = :email)';
+        $values = [':email' => $email];
         $statement = $database_connection->prepare($query); 
         $statement->execute($values);  
         $row = $statement->fetch(PDO::FETCH_ASSOC);
@@ -16,9 +16,9 @@
           if (password_verify($password, $row['password']))
           {
             if($row['is_admin'] == 1) {
-                echo "<script>confirmAction('$username')</script>";
+                echo "<script>confirmAction('" . $row['firtsname'] . "')</script>";
             } else {
-                setcookie("Login", $username, );
+                setcookie("Login", $row['firtsname'], );
                 header("Location: ./myaccount/");
             }
 
@@ -26,6 +26,36 @@
             phpAlert("Username or password is incorrect");
           }
         } 
+    }
+
+    if(isset($_POST['register_submit'])) {
+        $firstname = $_POST['firstname'];
+        $lastname = $_POST['lastname'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $confirmPassword = $_POST['confirm_password'];
+
+        if($password == $confirmPassword) {
+            $checkPassword = htmlspecialchars($password);
+            $hashedPassword = password_hash($checkPassword, PASSWORD_DEFAULT);
+
+            $userData = [
+                'firstname' => htmlspecialchars($firstname),
+                'lastname' => htmlspecialchars($lastname),
+                'email' => htmlspecialchars($email),
+                'password' => $hashedPassword,
+                'is_admin' => 0
+            ];
+    
+            $insertUser = "INSERT INTO users (firtsname, lastname, email, password, is_admin)
+            values(:firstname, :lastname, :email, :password, :is_admin)";
+    
+            $statementUser = $database_connection->prepare($insertUser);
+    
+            $statementUser->execute($userData);
+        } else {
+            phpAlert("your passwords do not match");
+        }
     }
 
 
@@ -52,12 +82,30 @@
         <i class="fa-solid fa-x" onclick="closeLogin(1)"></i>
         <h1>login</h1>
         <form action="" method="post">
-            <label for="username">Username</label> <br>
-            <input type="text" name="username" id="username"> <br>
+            <label for="email">E-Mail adress</label> <br>
+            <input type="email" name="email" id="email"> <br>
             <label for="password">Password</label> <br>
             <input type="password" name="password" id="password"><br> <br>
             <input type="submit" name="submit" value="Inloggen"> <br>
-            <p>Geen account? <a href="">regsitreer</a></p> <br> 
+            <p>Geen account? <a onclick="openRegister()">regsitreer</a></p> <br> 
+        </form>
+    </div>
+
+    <div class="form register" id="register_form">
+        <i class="fa-solid fa-x" onclick="closeLogin(4)"></i>
+        <h1>Register</h1>
+        <form action="" method="post">
+            <label for="firstname">Firstname</label> <br>
+            <input type="text" name="firstname" id="firstname" required=true> <br>
+            <label for="lastname">Lastname</label> <br>
+            <input type="text" name="lastname" id="lastname" required=true> <br>
+            <label for="email">E-mail adress</label> <br>
+            <input type="email" name="email" id="email" required=true> <br>
+            <label for="password">Password</label> <br>
+            <input type="password" name="password" id="password" required=true><br>
+            <label for="confirm_password">Confirm password</label> <br>
+            <input type="password" name="confirm_password" id="confirm_password" required=true><br> <br>
+            <input type="submit" name="register_submit" value="Registreren"> <br> <br>
         </form>
     </div>
 

@@ -38,6 +38,7 @@ body {
     height: 60px;
     background-color: black;
     width: 100%;
+    z-index: 9999999999999999999999999;
     /* text-align: center; */
 }
 
@@ -215,7 +216,7 @@ button:hover {
     width: 170px;
     background-color: #fff;
     border-radius: 10px;
-    z-index: 1000000;
+    z-index: 9999;
     animation: popup .3s;
 }
 

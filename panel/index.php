@@ -56,11 +56,13 @@
 
     if(isset($_POST['userSubmit'])) {
         $name = $_POST['username'];
-        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        $password = $_POST['password'];
+        $checkPassword = htmlspecialchars($password);
+        $hashedPassword = password_hash($checkPassword, PASSWORD_DEFAULT);
 
         $userData = [
             'username' => htmlspecialchars($name),
-            'password' => htmlspecialchars($password)
+            'password' => $password
         ];
 
         $insertUser = "INSERT INTO users (username, password)

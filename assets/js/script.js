@@ -33,6 +33,8 @@ function checkCookie() {
 } 
 
 function login() {
+
+
     if(getCookie("Login-admin")) {
         const response = confirm("Hi I see this is an admin login, do you want to go to your user panel or to the admin panel. Click 'OK' to go to the admin panel. Click on 'Cancel' to go to the user panel.");
 
@@ -44,6 +46,12 @@ function login() {
         }
     } else if(getCookie("Login")){
         window.location.href = "./myaccount/";
+    }
+
+    if (document.getElementById("login_form").style.display == "block") {
+        console.log("kaas");
+        document.querySelector(".form.login").style.animation = "popout .3s";
+        setTimeout(() => {  document.querySelector(".form.login").style.display = "none"; }, 290);
     } else {
         document.getElementById("login_form").style.display = "block";
         document.getElementById("login_form").style.animation = "popup .3s";
@@ -62,6 +70,10 @@ function closeLogin(number) {
     } else if (number == 3) {
         document.querySelector(".form.add_user").style.animation = "popout .3s";
         setTimeout(() => {  document.querySelector(".form.add_user").style.display = "none"; }, 290);
+    }
+    else if (number == 4) {
+        document.getElementById("register_form").style.animation = "popout .3s";
+        setTimeout(() => {      document.getElementById("register_form").style.display = "none"; }, 290);
     }
 
 };
@@ -129,4 +141,10 @@ function confirmAction(username) {
         setCookie("Login", username, );
         window.location.href = "./myaccount/";
     }
+}
+
+function openRegister() {
+    console.log("jo");
+    document.getElementById("login_form").style.display = "none";
+    document.getElementById("register_form").style.display = "block";
 }
