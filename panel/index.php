@@ -55,18 +55,23 @@
     }
 
     if(isset($_POST['userSubmit'])) {
-        $name = $_POST['username'];
+        $firstname = $_POST['firstname'];
+        $lastname = $_POST['lastname'];
+        $email = $_POST['email'];
         $password = $_POST['password'];
         $checkPassword = htmlspecialchars($password);
         $hashedPassword = password_hash($checkPassword, PASSWORD_DEFAULT);
 
         $userData = [
-            'username' => htmlspecialchars($name),
-            'password' => $password
+            'firstname' => htmlspecialchars($firstname),
+            'lastname' => htmlspecialchars($lastname),
+            'email' => htmlspecialchars($email),
+            'password' => $hashedPassword,
+            'is_admin' => 1
         ];
 
-        $insertUser = "INSERT INTO users (username, password)
-        values(:username, :password)";
+        $insertUser = "INSERT INTO users (firstname, lastname, email, password, is_admin)
+        values(:firstname, :lastname, :email, :password, :is_admin)";
 
         $statementUser = $database_connection->prepare($insertUser);
 
@@ -165,9 +170,13 @@
         <i class="fa-solid fa-x" onclick="closeLogin(3)"></i>
         <h1>Toevoegen</h1>
         <form action="" method="post">
-            <label for="username">Gebruikersnaam</label> <br>
-            <input type="text" name="username" id="username1"> <br>
-            <label for="password">Wachtwoord</label> <br>
+            <label for="firstname">Firstname</label> <br>
+            <input type="text" name="firstname" id="firstname"> <br>
+            <label for="lastname">Lastname</label> <br>
+            <input type="text" name="lastname" id="lastname"> <br>
+            <label for="email">Email</label> <br>
+            <input type="email" name="email" id="email"> <br>
+            <label for="password">Password</label> <br>
             <input type="text" name="password" id="password"><br> <br>
             <input type="submit" name="userSubmit" value="Toevoegen"> <br> <br>
         </form>

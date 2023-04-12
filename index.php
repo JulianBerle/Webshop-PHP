@@ -16,9 +16,9 @@
           if (password_verify($password, $row['password']))
           {
             if($row['is_admin'] == 1) {
-                echo "<script>confirmAction('" . $row['firtsname'] . "')</script>";
+                echo "<script>confirmAction('" . $row['firstname'] . "')</script>";
             } else {
-                setcookie("Login", $row['firtsname'], );
+                setcookie("Login", $row['firstname'], );
                 header("Location: ./myaccount/");
             }
 
