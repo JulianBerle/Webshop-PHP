@@ -8,12 +8,12 @@
 * Admin panel where you can see all the items, add/ delete items, see all the users, add/ delete users.
 * MySQL Database.
 * Secure passwords (Passwords are hashed).
-* Add items to favorites.
+<!-- * Add items to favorites. -->
+* Register as user.
 
 ### ToDo 
 
-* Send confirmation E-Mail when login in with another IP (Sames as Discord).
-* Register as user.
+* Send confirmation E-Mail when login in with another IP (Sames as Discord). 
 * Working shoppingcart.
 * Working favorites list.
 * User Panel
