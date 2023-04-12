@@ -13,7 +13,7 @@
 ### ToDo 
 
 * Send confirmation E-Mail when login in with another IP (Sames as Discord).
-* Register ass user.
+* Register as user.
 * Working shoppingcart.
 * Working favorites list.
 * User Panel
