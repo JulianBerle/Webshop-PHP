@@ -1,4 +1,4 @@
-<?php 
+<?php
     if(!isset($_COOKIE['Login-admin'])) {
         // echo "<style>section { display: none; }</style>";
         // echo "<div class='acces_denied'><h1>ACCES DENIED</h1></div>";
@@ -97,7 +97,7 @@
     $usernameCookie = $_COOKIE['Login-admin'];
 
     echo "<div class='navbar'>
-    <img src='../assets/favicon.png' alt=''>
+    <img src='../assets/images/favicon.png' alt=''>
     <h1>Welcome $usernameCookie</h1>
     <i class='fa-solid fa-house' onclick='home()'></i>     
     <i onclick='logout()' class='fa-solid fa-arrow-right-from-bracket'></i>

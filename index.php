@@ -69,10 +69,11 @@
     <title>Document</title>
     <script src="https://kit.fontawesome.com/e6d99cb95a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="icon" href="./assets/images/favicon.png">
 </head>
 <body>
     <div class="navbar">
-        <img src="./assets/favicon.png" alt="">
+        <img src="./assets/images/favicon.png" alt="">
         <h1>Berle Shop</h1>
         <i class="fa-solid fa-person" onclick="login()"></i>
         <i class="fa-solid fa-cart-shopping" onclick="alert('This function is in development. Stay tuned!')"></i>
