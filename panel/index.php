@@ -5,12 +5,13 @@
         header("Location: ../");
     } else {
 
-    }
+    };
 
     include_once("../include.php");
 
 
-    if(isset($_POST['itemSubmit']) && isset($_FILES['my_image'])) {
+    if(isset($_POST['itemSubmit'])) {
+        echo "fakka";
         $img_name = $_FILES['my_image']['name'];
         $img_size = $_FILES['my_image']['size'];
         $tmp_name = $_FILES['my_image']['tmp_name'];
@@ -145,7 +146,7 @@
                 <label for="images" class="drop-container">
                 <span class="drop-title">Drop files here</span>
                 or
-                <input type="file" id="images" accept="image/*" required>
+                <input type="file" id="images" name="my_image" required=true>
                 </label>
             </div> <br>
             <input type="submit" name="itemSubmit" value="Toevoegen"> <br> <br>
