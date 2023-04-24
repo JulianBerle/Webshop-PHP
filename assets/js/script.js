@@ -49,11 +49,14 @@ function login() {
     }
 
     if (document.getElementById("login_form").style.display == "block") {
-        console.log("kaas");
         document.querySelector(".form.login").style.animation = "popout .3s";
         setTimeout(() => {  document.querySelector(".form.login").style.display = "none"; }, 290);
+    } else if(document.getElementById("register_form").style.display == "block") {
+        document.getElementById("register_form").style.animation = "popout .3s";
+        setTimeout(() => {document.getElementById("register_form").style.display = "none"; }, 290);
     } else {
         document.getElementById("login_form").style.display = "block";
+        document.getElementById("register_form").style.display = "none";
         document.getElementById("login_form").style.animation = "popup .3s";
     }
 
@@ -144,7 +147,19 @@ function confirmAction(username) {
 }
 
 function openRegister() {
-    console.log("jo");
     document.getElementById("login_form").style.display = "none";
     document.getElementById("register_form").style.display = "block";
 }
+
+function togglePassword(number) {
+    let eye = document.querySelector(`#eye_${number}`);
+    var x = document.querySelector(`#id_password_${number}`);
+    if (x.type === "password") {
+      x.type = "text";
+      eye.setAttribute('name', 'eye-off-outline')
+      
+    } else {
+      x.type = "password";
+      eye.setAttribute('name', 'eye-outline')
+    }
+  } 

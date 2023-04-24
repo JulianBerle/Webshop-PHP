@@ -111,9 +111,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Panel</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="https://kit.fontawesome.com/e6d99cb95a.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="../assets/images/favicon.png">
 </head>
 <body>
     <!-- <section> -->
@@ -130,11 +131,23 @@
         <i class="fa-solid fa-x" onclick="closeLogin(2)"></i>
         <h1>Toevoegen</h1>
         <form action="" method="post" enctype="multipart/form-data">
-            <label for="titel">Titel</label> <br>
-            <input type="text" name="titel" id="titel"> <br>
-            <label for="prijs">Prijs</label> <br>
-            <input type="text" name="prijs" id="prijs"><br>
-            <input type="file" name="my_image"> <br><br>
+            <div class="titel">
+                <label for="titel">Titel</label> <br>
+                <ion-icon name="text-outline"></ion-icon>
+                <input type="text" name="titel" id="titel" required=true placeholder="Titel"> 
+            </div><br>
+            <div class="prijs">
+                <label for="prijs">Prijs</label> <br>
+                <ion-icon name="pricetag-outline"></ion-icon>
+                <input type="text" name="prijs" id="prijs" required=true placeholder="10">
+            </div><br>
+            <div class="file">
+                <label for="images" class="drop-container">
+                <span class="drop-title">Drop files here</span>
+                or
+                <input type="file" id="images" accept="image/*" required>
+                </label>
+            </div> <br>
             <input type="submit" name="itemSubmit" value="Toevoegen"> <br> <br>
         </form>
     </div>
@@ -170,14 +183,27 @@
         <i class="fa-solid fa-x" onclick="closeLogin(3)"></i>
         <h1>Toevoegen</h1>
         <form action="" method="post">
-            <label for="firstname">Firstname</label> <br>
-            <input type="text" name="firstname" id="firstname"> <br>
-            <label for="lastname">Lastname</label> <br>
-            <input type="text" name="lastname" id="lastname"> <br>
-            <label for="email">Email</label> <br>
-            <input type="email" name="email" id="email"> <br>
-            <label for="password">Password</label> <br>
-            <input type="text" name="password" id="password"><br> <br>
+            <div class="firstname">
+                <label for="firstname">Firstname</label> <br>
+                <ion-icon name="text-outline"></ion-icon>
+                <input type="text" name="firstname" id="firstname" required=true placeholder="Firtsname">
+            </div><br>
+            <div class="lastname">
+                <label for="lastname">Lastname</label> <br>
+                <ion-icon name="text-outline"></ion-icon>
+                <input type="text" name="lastname" id="lastname" required=true placeholder="Lastname">
+            </div> <br>
+            <div class="email">
+                <label for="email">Email</label> <br>
+                <ion-icon name="mail-outline"></ion-icon>
+                <input type="email" name="email" id="email" required=true placeholder="username@mail.com">
+            </div> <br>
+            <div class="password">
+                <label for="password">Password</label> <br>
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <input type="text" name="password" id="password" required=true placeholder="············">
+                <ion-icon name="eye-outline"></ion-icon>
+            </div> <br>
             <input type="submit" name="userSubmit" value="Toevoegen"> <br> <br>
         </form>
     </div>

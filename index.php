@@ -66,7 +66,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Berle Shop</title>
     <script src="https://kit.fontawesome.com/e6d99cb95a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="icon" href="./assets/images/favicon.png">
@@ -81,12 +81,19 @@
     
     <div class="form login" id="login_form">
         <i class="fa-solid fa-x" onclick="closeLogin(1)"></i>
-        <h1>login</h1>
+        <img src="./assets/images/logo_scroll.png" alt="logo">
         <form action="" method="post">
-            <label for="email_login">E-Mail adress</label> <br>
-            <input type="email" name="email_login" id="email_login" required=true> <br>
-            <label for="password_login">Password</label> <br>
-            <input type="password" name="password_login" id="password_login" required=true><br> <br>
+            <div class="email">
+                <label for="email_login">Email Adress</label> <br>
+                <ion-icon name="mail-outline"></ion-icon>
+                <input type="email" name="email_login" id="email_login" required=true placeholder="username@mail.com">
+            </div> <br>
+            <div class="password">
+                <label for="password_login">Password</label> <br>
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <input type="password" name="password_login" id="id_password_1" required=true placeholder="············">
+                <ion-icon name="eye-outline" id="eye_1" onclick="togglePassword(1)"></ion-icon>
+            </div> <br>
             <input type="submit" name="submit" value="Inloggen"> <br>
             <p>Geen account? <a onclick="openRegister()">regsitreer</a></p> <br> 
         </form>
@@ -96,16 +103,33 @@
         <i class="fa-solid fa-x" onclick="closeLogin(4)"></i>
         <h1>Register</h1>
         <form action="" method="post">
-            <label for="firstname">Firstname</label> <br>
-            <input type="text" name="firstname" id="firstname" required=true> <br>
-            <label for="lastname">Lastname</label> <br>
-            <input type="text" name="lastname" id="lastname" required=true> <br>
-            <label for="email">E-mail adress</label> <br>
-            <input type="email" name="email" id="email" required=true> <br>
-            <label for="password">Password</label> <br>
-            <input type="password" name="password" id="password" required=true><br>
-            <label for="confirm_password">Confirm password</label> <br>
-            <input type="password" name="confirm_password" id="confirm_password" required=true><br> <br>
+            <div class="firstname">
+                <label for="firstname">Firstname</label> <br>
+                <ion-icon name="text-outline"></ion-icon>
+                <input type="text" name="firstname" id="firstname" required=true placeholder="Firtsname">
+            </div><br>
+            <div class="lastname">
+                <label for="lastname">Lastname</label> <br>
+                <ion-icon name="text-outline"></ion-icon>
+                <input type="text" name="lastname" id="lastname" required=true placeholder="Lastname"> 
+            </div><br>
+            <div class="mail">
+                <label for="email">E-mail adress</label> <br>
+                <ion-icon name="mail-outline"></ion-icon>
+                <input type="email" name="email" id="email" required=true placeholder="username@mail.com">
+            </div><br>
+            <div class="password">
+                <label for="password">Password</label> <br>
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <input type="password" name="password" id="id_password_2" required=true placeholder="············">
+                <ion-icon name="eye-outline" id="eye_2" onclick="togglePassword(2)"></ion-icon>
+            </div><br>
+            <div class="password">
+                <label for="confirm_password">Confirm password</label> <br>
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <input type="password" id="id_password_3" name="confirm_password" required=true placeholder="············">
+                <ion-icon name="eye-outline" id="eye_3" onclick="togglePassword(3)"></ion-icon>
+            </div><br>
             <input type="submit" name="register_submit" value="Registreren"> <br> <br>
         </form>
     </div>
