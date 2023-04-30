@@ -76,7 +76,7 @@
         <img src="./assets/images/favicon.png" alt="">
         <h1>Berle Shop</h1>
         <i class="fa-solid fa-person" onclick="login()"></i>
-        <i class="fa-solid fa-cart-shopping" onclick="alert('This function is in development. Stay tuned!')"></i>
+        <i class="fa-solid fa-cart-shopping" onclick="window.location.href = './shoppingCart'"></i>
     </div>
     
     <div class="form login" id="login_form">
@@ -139,7 +139,7 @@
         $query = $database_connection->query("SELECT * FROM store ORDER BY id DESC");
 
         while($row = $query->fetch()) {
-            echo "<div class='box'> <button class='favorite' onclick='alert(`This function is in development. Stay tuned!`)'><i class='fa-solid fa-heart'></i></button> <img src='./assets/images/product-images/" .$row['img'] . "' alt='" . $row['name'] . "-img'> <h2>" . $row['name'] . "</h2> <p>€" . $row['price'] . "</p> <button class='add-to-cart' onclick='alert(`This function is in development. Stay tuned!`)'><i class='fa-solid fa-cart-shopping'></i></button></div> <br>\n";
+            echo "<div class='box'> <button class='favorite' onclick='alert(`This function is in development. Stay tuned!`)'><i class='fa-solid fa-heart'></i></button> <img src='./assets/images/product-images/" .$row['img'] . "' alt='" . $row['name'] . "-img'> <h2>" . $row['name'] . "</h2> <p>€" . $row['price'] . "</p> <button class='add-to-cart' onclick='addToShoppingCart(" .$row['id'] . ")'><i class='fa-solid fa-cart-shopping'></i></button></div> <br>\n";
         };
         ?>
     </div>

@@ -466,3 +466,29 @@ input[type=submit]:hover {
     transform: translate(-50%, -50%);
     text-align: center;
 }
+
+.shoppingBoxes {
+    display: flex;
+    flex-direction: column;
+}
+
+.shoppingBox h2 {
+    display: inline-block;
+}
+
+.shoppingBoxes img {
+    display: block;
+    width: 290px;
+    margin-top: 25px;
+    object-fit: contain;
+}
+
+.cart-item-image {
+	width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: #E0E0E0 1px solid;
+    padding: 5px;
+    vertical-align: middle;
+    margin-right: 15px;
+}

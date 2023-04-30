@@ -163,3 +163,11 @@ function togglePassword(number) {
       eye.setAttribute('name', 'eye-outline')
     }
   } 
+
+function addToShoppingCart(id) {
+    if(getCookie("shoppingCart") == null || getCookie("shoppingCart") == "" || getCookie("shoppingCart") == " ") {
+        setCookie("shoppingCart", `${id}`, 7);
+    } else {
+        setCookie("shoppingCart", `${getCookie("shoppingCart")} + ${id}`, 7);
+    }
+}
