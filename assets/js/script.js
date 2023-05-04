@@ -165,9 +165,10 @@ function togglePassword(number) {
   } 
 
 function addToShoppingCart(id) {
-    if(getCookie("shoppingCart") == null || getCookie("shoppingCart") == "" || getCookie("shoppingCart") == " ") {
-        setCookie("shoppingCart", `${id}`, 7);
+    if(getCookie(`shoppingCart${id}`) == null || getCookie(`shoppingCart${id}`) == "" || getCookie(`shoppingCart${id}`) == " ") {
+        setCookie(`shoppingCart${id}`, 1, 7)
     } else {
-        setCookie("shoppingCart", `${getCookie("shoppingCart")} + ${id}`, 7);
+        let number = parseInt(getCookie(`shoppingCart${id}`));
+        setCookie(`shoppingCart${id}`, number+1, 7);
     }
 }
