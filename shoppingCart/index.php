@@ -50,11 +50,12 @@
                 };
                 var_dump($productIds);
                 for ($x = 0; $x < count($productIds); $x++) {
-                    if (!isset($_COOKIE["shoppingCart" . $productIds[$x]])) {
+                    if (!isset($_COOKIE["shoppingCart" . $productIds[$x]]) || $_COOKIE["shoppingCart" . $productIds[$x]] < 1) {
                         echo $productIds[$x] . " bestaat niet <br>";
                     } else {
                         $cookieValue = $_COOKIE["shoppingCart" . $productIds[$x]];
-                        echo $cookieValue . "<br>";
+                        $existingCookies = [];
+                        array_push($existingCookies, $productIds[$x]);
                         $query = $database_connection->query("SELECT * FROM store WHERE id = $productIds[$x]");
                         while($row = $query->fetch()) {
                             echo "
@@ -63,21 +64,23 @@
                                     <td>" . $row["id"] . "</td>
                                     <td style='text-align:right;'>" . $cookieValue . "</td>
                                     <!--<td  style='text-align:right;'>" . $row['price'] . "</td>-->
-                                    <td  style='text-align:right;'>" . $row['price'] . "</td>
+                                    <td  style='text-align:right;'>" . $row['price']*$cookieValue . "</td>
                                     <td style='text-align:center;'><a href='index.php?action=remove&code=" . $row['id'] . "' class='btnRemoveAction'><img src='../assets/images/icon-delete.png' alt='Remove Item' /></a></td>
                                     </tr>
                                     ";                        
                                 };
                     }
                 }
+                global $existingCookies;
+                var_dump($existingCookies);
             ?>
 
-            <!-- <tr>
+            <tr>
                 <td colspan="2" align="right">Total:</td>
-                <td align="right"><?//php echo $total_quantity; ?></td>
-                <td align="right" colspan="2"><strong><?//php echo "$ ".number_format($total_price, 2); ?></strong></td>
+                <td align="right"><?php echo $_COOKIE["shoppingCart16"]+$_COOKIE["shoppingCart15"]+$_COOKIE["shoppingCart14"]; ?></td>
+                <td align="right" colspan="2"><strong>Total Price</strong></td>
                 <td></td>
-            </tr> -->
+            </tr>
         </tbody>
     </table>
 </body>
